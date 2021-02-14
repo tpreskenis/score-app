@@ -2,21 +2,23 @@
   <v-app>
     <v-app-bar
       app
+      style="height: 70px;"
       color="white"
       dark
       flat
     >
     
-      <h1 class="app_title">{{page_title}}</h1>
+      <h1 style="position: relative; bottom: -10px;" class="app_title">{{page_title}}</h1>
 
       <v-spacer></v-spacer>
 
       <!--This will open up my GitHub -->
       <v-btn
+        style="position: relative; bottom: -10px;" 
         :ripple="false"
         id="no-background-hover"
         class="app_title_button"
-        href="https://github.com/tpreskenis"
+        href="https://github.com/tpreskenis/score-app"
         target="_blank"
         icon
       >
@@ -68,6 +70,7 @@ export default {
 </script>
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
 // This alters Vuetifys Light Theme
 .theme--light.v-bottom-navigation .v-btn:not(.v-btn--active) {
@@ -86,7 +89,7 @@ export default {
 
 // Using Maven Pro --> Similar to ars-maquette
 .app_title {
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: black;
 }
 

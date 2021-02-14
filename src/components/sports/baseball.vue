@@ -3,37 +3,20 @@
     class="mx-auto my-12 rounded-xl"
     depressed
     max-width="344"
+    min-height="200"
     flat
   >
-    <v-list-item three-line>
-      <v-list-item-content>
-        <div class="overline mb-4">
-          BASEBALL
-        </div>
-        <v-list-item-title class="headline mb-1">
-          Headline 5
-        </v-list-item-title>
-        <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-      </v-list-item-content>
-
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey"
-      ></v-list-item-avatar>
-    </v-list-item>
-
-    <v-card-actions>
-      <v-btn
-        outlined
-        rounded
-        text
-      >
-        Button
-      </v-btn>
-    </v-card-actions>
+    <h1 class="dummy_text">Baseball</h1>
   </v-card>
 </template>
 <script>
   export default {}
 </script>
+<style lang="scss" scoped>
+.dummy_text {
+    font-family: 'Nunito', sans-serif;
+    margin-left: 5%;
+    position: relative;
+    bottom: -10px;
+}
+</style>

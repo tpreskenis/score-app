@@ -60,14 +60,14 @@ export default {
 
   .option_one{
     width: 165px;
-    height: 40px;
+    height: 50px;
     position: absolute;
     z-index: 2;
     cursor: pointer;
   }
   
   .toggle_text_one {
-      font-family: 'Maven Pro', sans-serif;
+      font-family: 'Nunito', sans-serif;
       position: absolute;
       top: 0;
       right: 0;
@@ -78,7 +78,7 @@ export default {
       justify-content: center;
       height: 100%;
       margin: auto;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
       pointer-events: none;
@@ -89,14 +89,14 @@ export default {
   .option_two{
     width: 165px;
     left: 165px;
-    height: 40px;
+    height: 50px;
     position: absolute;
     z-index: 2;
     cursor: pointer;
   }
 
   .toggle_text_two {
-      font-family: 'Maven Pro', sans-serif;
+      font-family: 'Nunito', sans-serif;
       position: absolute;
       top: 0;
       right: 0;
@@ -107,7 +107,7 @@ export default {
       justify-content: center;
       height: 100%;
       margin: auto;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
       pointer-events: none;
@@ -130,7 +130,7 @@ export default {
     position: relative;
     display: block;
     width: 100%;
-    height: 40px;
+    height: 50px;
     margin: 0;
     border: 3px solid #F0F0F0;
     border-radius: 20px;
