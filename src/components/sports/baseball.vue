@@ -8,7 +8,7 @@
     <v-list-item three-line>
       <v-list-item-content>
         <div class="overline mb-4">
-          OVERLINE
+          BASEBALL
         </div>
         <v-list-item-title class="headline mb-1">
           Headline 5
