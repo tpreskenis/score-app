@@ -3,6 +3,7 @@
     class="mx-auto my-12 rounded-xl"
     depressed
     max-width="344"
+    min-width="280"
     min-height="200"
     flat
   >

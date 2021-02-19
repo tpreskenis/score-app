@@ -25,14 +25,13 @@
         <v-icon color="#1E88E5" class="app_title_button_icon" large>mdi-github</v-icon>
       </v-btn>
     </v-app-bar>
-
-    <v-main class="app_background">
-      <transition name="fade" mode="out-in">
-      <sports-layout v-if="top_level_navigation == 'sports'" key="sports"/>
-      <info-layout v-if="top_level_navigation == 'info'" key="info"/>
-      </transition>
-      <vue-footer @nav_clicked="navigation"/>
-    </v-main>
+        <v-main class="app_background">
+            <transition name="fade" mode="out-in">
+            <sports-layout v-if="top_level_navigation == 'sports'" key="sports"/>
+            <info-layout v-if="top_level_navigation == 'info'" key="info"/>
+            </transition>
+        </v-main>
+    <vue-footer @nav_clicked="navigation"/>
   </v-app>
 </template>
 
@@ -55,7 +54,7 @@ export default {
 
   data: () => ({
     page_title: "Scores",
-    top_level_navigation: 'sports'
+    top_level_navigation: 'sports',
   }),
   methods: {
     navigation (value) {
@@ -64,6 +63,14 @@ export default {
         this.page_title = "Scores"
       if (this.top_level_navigation == 'info')
         this.page_title = "Information"
+    },
+    onRefresh: function() {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve();
+            }, 1000);
+            console.log(reject)
+        });
     }
   }
 };
