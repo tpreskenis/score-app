@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    mlb_game: {},
   },
   mutations: {
+    updating_mlb (state, data) {
+      state.mlb_game = data
+    }
   },
   actions: {
   },

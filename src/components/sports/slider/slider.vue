@@ -79,7 +79,7 @@
     },
     computed: {
       smallScreenSize: function() {
-        if (this.windowWidth <= 540)
+        if (this.windowWidth <= 700)
           return true
         else 
           return false
@@ -90,9 +90,9 @@
 
 <style lang="scss" scoped>
 .swiper-button-prev {
-  left: 25%;
+  left: 15%;
 }
 .swiper-button-next {
-  right: 25%;
+  right: 15%;
 }
 </style>

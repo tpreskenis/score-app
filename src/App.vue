@@ -7,23 +7,23 @@
       dark
       flat
     >
-    
-      <h1 style="position: relative; bottom: -10px;" class="app_title">{{page_title}}</h1>
+      <div class="container" style="display: flex; justify-content: center;">
+        <h1 style="position: relative; bottom: -10px;" class="app_title">{{page_title}}</h1>
 
-      <v-spacer></v-spacer>
+        <div style="width: 180px;"></div>
 
-      <!--This will open up my GitHub -->
-      <v-btn
-        style="position: relative; bottom: -10px;" 
-        :ripple="false"
-        id="no-background-hover"
-        class="app_title_button"
-        href="https://github.com/tpreskenis/score-app"
-        target="_blank"
-        icon
-      >
-        <v-icon color="#1E88E5" class="app_title_button_icon" large>mdi-github</v-icon>
-      </v-btn>
+        <!--This will open up my GitHub -->
+        <v-btn
+          style="position: relative; bottom: -10px;" 
+          :ripple="false"
+          id="no-background-hover"
+          class="app_title_button"
+          icon
+        >
+
+          <v-icon color="#1E88E5" class="app_title_button_icon" large>fa-sync-alt</v-icon>
+        </v-btn>
+      </div>
     </v-app-bar>
         <v-main class="app_background">
             <transition name="fade" mode="out-in">
@@ -37,7 +37,7 @@
 
 <script>
 
-import vueFooter from './components/Footer';
+import vueFooter from './components/footer';
 
 import infoLayout from './components/info/layout';
 import sportsLayout from './components/sports/layout';
@@ -64,14 +64,30 @@ export default {
       if (this.top_level_navigation == 'info')
         this.page_title = "Information"
     },
-    onRefresh: function() {
-        return new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                resolve();
-            }, 1000);
-            console.log(reject)
+    mlbDataFetch() {
+      // GET request using fetch with error handling
+      fetch("https://scoredatabaseapi.azurewebsites.net/mlb_game", {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      })
+        .then(async response => {
+          const data = await response.json();
+          this.$store.commit('updating_mlb',data)
+          console.log(this.$store.state.mlb_game)
+          // check for error response
+          if (!response.ok) {
+            // get error message from body or default to response statusText
+            const error = (data && data.message) || response.statusText;
+            return Promise.reject(error);
+          }
+        })
+        .catch(error => {
+          this.errorMessage = error;
+          console.error("There was an error!", error);
         });
-    }
+    } 
+  },
+  created() {
+    this.mlbDataFetch();
   }
 };
 </script>
@@ -110,7 +126,7 @@ export default {
 
 .app_title_button:active {
   .app_title_button_icon{
-    transform: scale(0.75);
+    transform: scale(0.75) rotate(180deg);
   }
 }
 
