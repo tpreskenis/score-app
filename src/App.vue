@@ -37,7 +37,7 @@
 
 <script>
 
-import vueFooter from './components/footer';
+import vueFooter from './components/btn_footer';
 
 import infoLayout from './components/info/layout';
 import sportsLayout from './components/sports/layout';

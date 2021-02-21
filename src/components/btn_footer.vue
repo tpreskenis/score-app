@@ -15,7 +15,7 @@
 </template>
 <script>
   export default {
-    name: "vue-footer",
+    name: "btn-footer",
     data: () => ({ value: 0 }),
     methods: {
       // It will default to Sports
