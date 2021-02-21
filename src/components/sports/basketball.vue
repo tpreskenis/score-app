@@ -11,7 +11,9 @@
   </v-card>
 </template>
 <script>
-  export default {}
+  export default {
+    name: "basketball"
+  }
 </script>
 <style lang="scss" scoped>
 .dummy_text {

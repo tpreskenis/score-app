@@ -42,7 +42,9 @@
   </v-card>
 </template>
 <script>
-  export default {}
+  export default {
+    name: "basic info"
+  }
 </script>
 <style scoped lang="scss">
 .rounded-self {

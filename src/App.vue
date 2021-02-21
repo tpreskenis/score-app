@@ -64,6 +64,7 @@ export default {
       if (this.top_level_navigation == 'info')
         this.page_title = "Information"
     },
+    /*
     mlbDataFetch() {
       // GET request using fetch with error handling
       fetch("https://scoredatabaseapi.azurewebsites.net/mlb_game", {
@@ -85,6 +86,7 @@ export default {
           console.error("There was an error!", error);
         });
     } 
+    */
   },
   created() {
     this.mlbDataFetch();
