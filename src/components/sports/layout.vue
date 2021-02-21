@@ -2,8 +2,8 @@
     <div>
         <sports-switch @switch_clicked="switch_navigation"/>
         <transition name="fade" mode="out-in">
-            <baseball v-if="current_sport == 'item_one'"/>
-            <basketball v-if="current_sport == 'item_two'"/>
+            <baseball v-if="!this.$store.state.sport_checkbox"/>
+            <basketball v-if="this.$store.state.sport_checkbox"/>
         </transition>
     </div>
 </template>

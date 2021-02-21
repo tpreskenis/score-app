@@ -1,8 +1,8 @@
 <template>
       <div class="switch-wrapper">
-        <div class="option_one" v-on:click="switch_('item_one')"/>
+        <div class="option_one" v-on:click="switch_('Baseball')"/>
             <p :class="text_class_one">Baseball<p/>
-        <div class="option_two" v-on:click="switch_('item_two')"/>
+        <div class="option_two" v-on:click="switch_('Basketball')"/>
             <div :class="text_class_two">Basketball</div>
         <input v-model="checkbox" type="checkbox" class="checkbox" id="checkbox"/>
         <label for="checkbox" class="switch"></label>
@@ -13,27 +13,27 @@ export default {
     name: "switch_slide",
     data: function () {
         return {
-            checkbox: false
         }
     },
   // define methods under the `methods` object
   methods: {
     switch_: function (sport) {
-        if (sport == 'item_two') {
+        if (sport == 'Basketball') {
             if (!this.checkbox) {
-                this.checkbox = !this.checkbox
-                this.$emit('switch_clicked', sport)
+                this.$store.commit('current_sport',!this.$store.state.sport_checkbox)
             }
         }
-        else if (sport == 'item_one') {
+        else if (sport == 'Baseball') {
             if (this.checkbox) {
-                this.checkbox = !this.checkbox
-                this.$emit('switch_clicked', sport)
+                this.$store.commit('current_sport',!this.$store.state.sport_checkbox)
             }
         }
     }
     },
     computed: {
+      checkbox: function() {
+        return this.$store.state.sport_checkbox
+      },
       // assuming this is the text on the left
       text_class_one: function () {
             if (!this.checkbox)

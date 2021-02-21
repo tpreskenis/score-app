@@ -6,12 +6,15 @@
     min-height="200"
     flat
   >
-    <h1 class="dummy_text">Baseball</h1>
+    <h1 class="dummy_text">{{name}}</h1>
   </v-card>
 </template>
 <script>
   export default {
-      name:"slider_card"
+      name:"slider_card",
+      props: {
+        name: String
+      }
   }
 </script>
 <style lang="scss" scoped>

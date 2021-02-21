@@ -1,43 +1,19 @@
 <template>
   <div>
-    <swiper class="swiper" :options="swiperOption" v-if="smallScreenSize">
-      <swiper-slide>
-        <slider-card/>
-      </swiper-slide>
-      <swiper-slide>
-        <slider-card/>
-      </swiper-slide>
-      <swiper-slide>
-        <slider-card/>
-      </swiper-slide>
-      <swiper-slide>
-        <slider-card/>
+    <swiper class="swiper" :options="smallScreenSize" >
+      <swiper-slide v-for="(item, i) in mlb_player_data" :key="i">
+        <slider-card :name="item.last_name"/>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
-    <swiper class="swiper" :options="swiperOption_large" v-if="!smallScreenSize">
-      <swiper-slide>
-        <slider-card/>
-      </swiper-slide>
-      <swiper-slide>
-        <slider-card/>
-      </swiper-slide>
-      <swiper-slide>
-        <slider-card/>
-      </swiper-slide>
-      <swiper-slide>
-        <slider-card/>
-      </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
+    <div style="color: crimson;" class="swiper-button-prev" slot="button-prev" v-if="smallScreenSize == swiperOption_large"></div>
+    <div style="color: crimson;" class="swiper-button-next" slot="button-next" v-if="smallScreenSize == swiperOption_large"></div>
     </swiper>
   </div>
 </template>
 
 <script>
 
-  import sliderCard from "./card_slider"
+  import sliderCard from "./player_card"
 
   export default {
     name: 'news_slider',
@@ -80,14 +56,26 @@
     computed: {
       smallScreenSize: function() {
         if (this.windowWidth <= 700)
-          return true
+          return this.swiperOption
         else 
-          return false
+          return this.swiperOption_large
+      },
+      mlb_player_data: function() {
+        return this.$store.state.mlb_game.away_batters
       }
     }  
   }
 </script>
+<style lang="scss">
+.swiper-pagination-bullet {
+    opacity: 0.3;
+    background-color: #000000;
+}
 
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+</style>
 <style lang="scss" scoped>
 .swiper-button-prev {
   left: 15%;

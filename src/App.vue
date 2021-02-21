@@ -8,24 +8,24 @@
       flat
     >
       <div class="container" style="display: flex; justify-content: center;">
-        <h1 style="position: relative; bottom: -10px;" class="app_title">{{page_title}}</h1>
+        <h1 style="position: relative;" class="app_title">{{page_title}}</h1>
 
         <div style="width: 180px;"></div>
 
         <!--This will open up my GitHub -->
         <v-btn
-          style="position: relative; bottom: -10px;" 
+          style="position: relative;" 
           :ripple="false"
           id="no-background-hover"
           class="app_title_button"
           icon
         >
 
-          <v-icon color="#1E88E5" class="app_title_button_icon" large>fa-sync-alt</v-icon>
+          <v-icon :color="topIconColor" class="app_title_button_icon" large>fa-sync-alt</v-icon>
         </v-btn>
       </div>
     </v-app-bar>
-        <v-main class="app_background">
+        <v-main :class="background_class">
             <transition name="fade" mode="out-in">
             <sports-layout v-if="top_level_navigation == 'sports'" key="sports"/>
             <info-layout v-if="top_level_navigation == 'info'" key="info"/>
@@ -56,6 +56,40 @@ export default {
     page_title: "Scores",
     top_level_navigation: 'sports',
   }),
+  computed: {
+    background_class: function() {
+      if (this.top_level_navigation == 'sports' && this.$store.state.sport_checkbox) {
+        // Basketball
+        return "basketball_background"
+      }
+      else if (this.top_level_navigation == 'sports' && !this.$store.state.sport_checkbox) {
+        // Baseball
+        return "baseball_background"
+      }
+      else if (this.top_level_navigation == 'info') {
+        // Info
+        return "info_background"
+      }
+      else 
+        return "info_background"
+    },
+    topIconColor: function() {
+      if (this.top_level_navigation == 'sports' && this.$store.state.sport_checkbox) {
+        // Basketball
+        return "rgba(255,132,0,1)"
+      }
+      else if (this.top_level_navigation == 'sports' && !this.$store.state.sport_checkbox) {
+        // Baseball
+        return "rgba(170,10,10,1)"
+      }
+      else if (this.top_level_navigation == 'info') {
+        // Info
+        return "#1E88E5"
+      }
+      else 
+        return "#1E88E5"
+    }
+  },
   methods: {
     navigation (value) {
       this.top_level_navigation = value
@@ -66,12 +100,14 @@ export default {
     },
     mlbDataFetch() {
       // GET request using fetch with error handling
+      // Dev Use: http://localhost:3000/mlb_game
+      // Actual Use: "https://scoredatabaseapi.azurewebsites.net/mlb_game"
       fetch("https://scoredatabaseapi.azurewebsites.net/mlb_game", {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
       })
         .then(async response => {
           const data = await response.json();
-          this.$store.commit('updating_mlb',data)
+          this.$store.commit('updating_mlb',data[0])
           console.log(this.$store.state.mlb_game)
           // check for error response
           if (!response.ok) {
@@ -137,10 +173,17 @@ export default {
    background-color: transparent !important;
 }
 
-.app_background {
+.baseball_background {
   margin-bottom: 56px;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 8%, rgba(235,235,235,1) 100%);
+  background: linear-gradient(180deg, rgba(170,10,10,1) 0%, rgba(252,170,170,1) 27%, rgba(247,247,247,1) 67%, rgba(235,235,235,1) 100%);
+}
+.basketball_background {
+  margin-bottom: 56px;
+  background: linear-gradient(180deg, rgba(255,132,0,1) 0%, rgba(224,146,0,1) 27%, rgba(235,235,235,1) 67%, rgba(235,235,235,1) 100%);
+}
+.info_background {
+  margin-bottom: 56px;
+  background: linear-gradient(180deg, rgba(0,168,255,1) 0%, rgba(0,140,213,1) 27%, rgba(235,235,235,1) 67%, rgba(235,235,235,1) 100%);
 }
 
 </style>
