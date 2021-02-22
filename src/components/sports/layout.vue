@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-import sportsSwitch from './sportsSwitch';
+import sportsSwitch from './misc/sportsSwitch';
 
 import baseball from './baseball';
 import basketball from './basketball';

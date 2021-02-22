@@ -1,25 +1,27 @@
 <template>
-  <v-card
-    class="mx-auto my-12 rounded-xl"
-    depressed
-    max-width="344"
-    min-width="280"
-    min-height="200"
-    flat
-  >
-    <h1 class="dummy_text">Basketball</h1>
-  </v-card>
+  <div>
+    <blank-card/>
+    <stadium :site="site" v-if="site"/>
+  </div>
 </template>
 <script>
+import blankCard from "./blankcard"
+import stadium from "./misc/stadium_info"
+
   export default {
-    name: "basketball"
+    name: "basketball_template",
+    components: {
+      blankCard,
+      stadium
+    },
+    data: () => ({
+    }),
+    computed: {
+      site: function() {
+        return this.$store.state.nba_game.event_information
+      }
+    }
   }
 </script>
 <style lang="scss" scoped>
-.dummy_text {
-    font-family: 'Nunito', sans-serif;
-    margin-left: 5%;
-    position: relative;
-    bottom: -10px;
-}
 </style>

@@ -99,7 +99,6 @@ export default {
         this.page_title = "Information"
     },
     mlbDataFetch() {
-      // GET request using fetch with error handling
       // Dev Use: http://localhost:3000/mlb_game
       // Actual Use: "https://scoredatabaseapi.azurewebsites.net/mlb_game"
       fetch("https://scoredatabaseapi.azurewebsites.net/mlb_game", {
@@ -120,10 +119,33 @@ export default {
           this.errorMessage = error;
           console.error("There was an error!", error);
         });
+    },
+    nbaDataFetch() {
+      // Dev Use: http://localhost:3000/nba_game
+      // Actual Use: "https://scoredatabaseapi.azurewebsites.net/nba_game"
+      fetch("https://scoredatabaseapi.azurewebsites.net/nba_game", {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      })
+        .then(async response => {
+          const data = await response.json();
+          this.$store.commit('updating_nba',data[0])
+          console.log(this.$store.state.nba_game)
+          // check for error response
+          if (!response.ok) {
+            // get error message from body or default to response statusText
+            const error = (data && data.message) || response.statusText;
+            return Promise.reject(error);
+          }
+        })
+        .catch(error => {
+          this.errorMessage = error;
+          console.error("There was an error!", error);
+        });
     } 
   },
   created() {
     this.mlbDataFetch();
+    this.nbaDataFetch();
   }
 };
 </script>

@@ -2,18 +2,27 @@
   <div>
     <news-slider/>
     <blank-card/>
-    <blank-card/>
+    <stadium :site="site" v-if="site"/>
   </div>
 </template>
 <script>
 import newsSlider from "./slider/slider"
-import blankCard from "./basketball"
+import blankCard from "./blankcard"
+import stadium from "./misc/stadium_info"
 
   export default {
     name: "baseball_template",
     components: {
       newsSlider,
-      blankCard
+      blankCard,
+      stadium
+    },
+    data: () => ({
+    }),
+    computed: {
+      site: function() {
+        return this.$store.state.mlb_game.event_information
+      }
     }
   }
 </script>
