@@ -1,7 +1,7 @@
 <template>
   <div>
+    <scoreboard/>
     <news-slider/>
-    <blank-card/>
     <stats :home_stats="home_stats" :away_stats="away_stats" v-if="home_stats && away_stats"/>
     <stadium :site="site" v-if="site"/>
     <officals :officals="officals" v-if="officals"/>
@@ -9,7 +9,7 @@
 </template>
 <script>
 import newsSlider from "./slider/slider"
-import blankCard from "./blankcard"
+import scoreboard from "./scoreboard/baseball_score"
 
 import stats from "./stats/baseball_stats"
 
@@ -21,7 +21,7 @@ import stadium from "./misc/stadium_info"
     name: "baseball_template",
     components: {
       newsSlider,
-      blankCard,
+      scoreboard,
       stats,
       officals,
       stadium
