@@ -12,20 +12,32 @@
 
         <div style="width: 180px;"></div>
 
-        <!--This will open up my GitHub -->
+        <!--This will refresh the data -->
         <v-btn
           style="position: relative;" 
           :ripple="false"
           id="no-background-hover"
           class="app_title_button"
           icon
+          @click="reload=!reload; mlbDataFetch(); nbaDataFetch();"
         >
 
-          <v-icon :color="topIconColor" class="app_title_button_icon" large>fa-sync-alt</v-icon>
+          <v-icon :color="topIconColor" :class="icon_class" large>fa-sync-alt</v-icon>
         </v-btn>
       </div>
     </v-app-bar>
+    
         <v-main :class="background_class">
+            <v-snackbar
+              v-model="reload"
+              :color="topIconColor"
+              :timeout="1000"
+              absolute
+              top
+              rounded="pill"
+              >
+              Games have been refreshed!           
+            </v-snackbar>
             <transition name="fade" mode="out-in">
             <sports-layout v-if="top_level_navigation == 'sports'" key="sports"/>
             <info-layout v-if="top_level_navigation == 'info'" key="info"/>
@@ -55,8 +67,15 @@ export default {
   data: () => ({
     page_title: "Scores",
     top_level_navigation: 'sports',
+    reload: false,
   }),
   computed: {
+    icon_class: function() {
+      if (this.reload == true)
+        return "app_title_button_icon spin_icon"
+      else 
+        return "app_title_button_icon"
+    },
     background_class: function() {
       if (this.top_level_navigation == 'sports' && this.$store.state.sport_checkbox) {
         // Basketball
@@ -167,7 +186,9 @@ export default {
 .v-toolbar__content {
   display: block !important;
 }
-
+.v-snack__content {
+  text-align: -webkit-center !important;
+}
 </style>
 <style scoped lang="scss">
 
@@ -187,8 +208,23 @@ export default {
 
 .app_title_button:active {
   .app_title_button_icon{
-    transform: scale(0.75) rotate(180deg);
+    transform: scale(0.75);
   }
+}
+
+.spin_icon {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 
 #no-background-hover::before {

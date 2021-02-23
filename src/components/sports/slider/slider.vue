@@ -69,7 +69,7 @@
 <style lang="scss">
 .swiper-pagination-bullet {
     opacity: 0.3;
-    background-color: #000000;
+    background-color: #000000 !important;
 }
 
 .swiper-pagination-bullet-active {

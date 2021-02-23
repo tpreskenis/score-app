@@ -43,7 +43,7 @@
 </template>
 <script>
   export default {
-    name: "basic info"
+    name: "basic_info"
   }
 </script>
 <style scoped lang="scss">

@@ -39,9 +39,20 @@
 
         <v-expand-transition>
         <div v-show="show">
-            <v-card-text>
-            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-            </v-card-text>
+            <v-list-item
+              v-for="item in site_misc"
+              :key="item.label"
+            >
+              <v-list-item-title>{{ item.label }}</v-list-item-title>
+
+              <v-list-item-icon>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-subtitle class="text-right">
+                {{ item.value }}
+              </v-list-item-subtitle>
+            </v-list-item>
         </div>
         </v-expand-transition>
     </v-card>
@@ -57,6 +68,14 @@ const dateformat = require('dateformat');
         site: Object,
       },
       computed: {
+          site_misc: function() {
+              return [
+                { label: 'Game Duration', icon: 'mdi-clock', value: this.site.duration },
+                { label: 'Attendance', icon: 'mdi-account-group', value: this.site.attendance },
+                { label: 'Temperature', icon: 'mdi-white-balance-sunny', value: this.site.temperature },
+                { label: 'Surface', icon: 'mdi-grass', value: this.site.site.surface },
+            ]
+          },
           locationImage: function() {
             // We could pass this as a prop, but for now this is computed! (Or we could put this in the SRC)
               if (this.site.site.name == 'AmericanAirlines Arena')
