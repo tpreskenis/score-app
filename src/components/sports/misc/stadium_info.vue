@@ -10,7 +10,7 @@
         :src="locationImage"
         height="200px"
         >
-        <h1 class="dummy_text">Stadium</h1>
+        <h1 class="dummy_text">Game Info.</h1>
         </v-img>
         <v-card-title>
         {{this.site.site.name}}
@@ -19,7 +19,6 @@
         <v-card-subtitle>
         {{this.site.site.city}}, {{this.site.site.state}}
         </v-card-subtitle>
-
         <v-card-actions>
         <v-col style="padding-left: 7px;">
             <v-card-subtitle style="padding: 0px; !important">
@@ -66,6 +65,8 @@ const dateformat = require('dateformat');
       }),
       props: {
         site: Object,
+      },
+      methods: {
       },
       computed: {
           site_misc: function() {

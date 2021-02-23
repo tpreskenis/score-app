@@ -7,7 +7,7 @@
     min-height="200"
     flat
   >
-<h1 class="dummy_text">Batting Stats</h1>
+<h1 class="dummy_text">Team Stats</h1>
   <swiper class="swiper" :options="swiperOption">
     <swiper-slide>
     <v-simple-table style="margin-top: 10px; padding-bottom: 30px;">
@@ -18,10 +18,10 @@
               
             </th>
             <th class="text-left">
-              <v-img src="https://logos-world.net/wp-content/uploads/2020/05/Seattle-Mariners-Logo.png" max-width="60px" style="right: 18px;"></v-img>
+              <v-img src="https://i.pinimg.com/originals/01/5f/aa/015faa55b6c400afbef50fcd47fa8bc1.png" max-width="32px" style="right: 5px;"></v-img>
             </th>
             <th class="text-left">
-              <v-img src="https://i.pinimg.com/originals/01/5f/aa/015faa55b6c400afbef50fcd47fa8bc1.png" max-width="32px" style="right: 5px;"></v-img>
+              <v-img src="https://logos-world.net/wp-content/uploads/2020/05/Seattle-Mariners-Logo.png" max-width="60px" style="right: 18px;"></v-img>
             </th>
           </tr>
         </thead>
@@ -47,10 +47,10 @@
               
             </th>
             <th class="text-left">
-              <v-img src="https://logos-world.net/wp-content/uploads/2020/05/Seattle-Mariners-Logo.png" max-width="60px" style="right: 18px;"></v-img>
+              <v-img src="https://i.pinimg.com/originals/01/5f/aa/015faa55b6c400afbef50fcd47fa8bc1.png" max-width="32px" style="right: 5px;"></v-img>
             </th>
             <th class="text-left">
-              <v-img src="https://i.pinimg.com/originals/01/5f/aa/015faa55b6c400afbef50fcd47fa8bc1.png" max-width="32px" style="right: 5px;"></v-img>
+              <v-img src="https://logos-world.net/wp-content/uploads/2020/05/Seattle-Mariners-Logo.png" max-width="60px" style="right: 18px;"></v-img>
             </th>
           </tr>
         </thead>

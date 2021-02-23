@@ -1,9 +1,9 @@
 <template>
       <div class="switch-wrapper">
         <div class="option_one" v-on:click="switch_('Baseball')"/>
-            <p :class="text_class_one">Baseball<p/>
+            <p :class="text_class_one">MLB<p/>
         <div class="option_two" v-on:click="switch_('Basketball')"/>
-            <div :class="text_class_two">Basketball</div>
+            <div :class="text_class_two">NBA</div>
         <input v-model="checkbox" type="checkbox" class="checkbox" id="checkbox"/>
         <label for="checkbox" class="switch"></label>
     </div>
