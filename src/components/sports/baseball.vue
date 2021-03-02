@@ -67,10 +67,10 @@ import stadium from "./misc/stadium_info"
         return this.$store.state.mlb_game.away_period_scores
       },
       home_pitchers: function() {
-        return this.$store.state.mlb_game.home_period_scores
+        return this.$store.state.mlb_game.home_pitchers
       },
       away_pitchers: function() {
-        return this.$store.state.mlb_game.home_pitchers
+        return this.$store.state.mlb_game.away_pitchers
       },
       away_errors: function() {
         return this.$store.state.mlb_game.away_errors

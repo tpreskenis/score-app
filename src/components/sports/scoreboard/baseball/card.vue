@@ -51,13 +51,17 @@
             :home_abr="home_abr"
             :away_abr="away_abr"
             v-if="away_score && home_score"/>
+          <pitchers            
+            :home_pitchers="home_pitchers" 
+            :away_pitchers="away_pitchers"/>
         </v-card-text>
       </div>
-        </v-expand-transition>
+    </v-expand-transition>
   </v-card>
 </template>
 <script>
   import scoreboard from "./scorebord"
+  import pitchers from "./pitchers"
   export default {
     name:"scoreboard-baseball-card",
     props: {
@@ -73,7 +77,8 @@
       away_abr: String,
     },
     components: {
-      scoreboard
+      scoreboard,
+      pitchers
     },
     data () {
       return {
@@ -102,7 +107,9 @@
           return "score_win"
         else 
           return "score_loss"
-      }
+      },
+    },
+    methods: {
     }
   }
 </script>
