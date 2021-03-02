@@ -118,9 +118,7 @@ export default {
         this.page_title = "Information"
     },
     mlbDataFetch() {
-      // Dev Use: http://localhost:3000/mlb_game
-      // Actual Use: "https://scoredatabaseapi.azurewebsites.net/mlb_game"
-      fetch("https://scoredatabaseapi.azurewebsites.net/mlb_game", {
+      fetch("http://localhost:3000/mlb_game", {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
       })
         .then(async response => {
@@ -140,9 +138,7 @@ export default {
         });
     },
     nbaDataFetch() {
-      // Dev Use: http://localhost:3000/nba_game
-      // Actual Use: "https://scoredatabaseapi.azurewebsites.net/nba_game"
-      fetch("https://scoredatabaseapi.azurewebsites.net/nba_game", {
+      fetch("http://localhost:3000/nba_game", {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
       })
         .then(async response => {
