@@ -29,11 +29,11 @@
     
         <v-main :class="background_class">
             <v-snackbar
+              style=""
               v-model="reload"
               :color="topIconColor"
-              :timeout="1000"
-              absolute
-              top
+              :timeout="750"
+              centered
               rounded="pill"
               >
               Games have been refreshed!           

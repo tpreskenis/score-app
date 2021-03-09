@@ -8,6 +8,7 @@ export default new Vuex.Store({
     mlb_game: {},
     nba_game: {},
     sport_checkbox: false,
+    away_home_baseball: false,
   },
   mutations: {
     updating_mlb (state, data) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     current_sport (state, bool) {
       state.sport_checkbox = bool
+    },
+    current_team_baseball (state, bool) {
+      state.away_home_baseball = bool
     }
   },
   actions: {

@@ -12,7 +12,7 @@
       :home_abr="home_team.abbreviation" 
       :away_abr="away_team.abbreviation" 
       v-if="away_score && home_score && away_pitchers && home_pitchers && home_stats && away_stats"/>
-    <news-slider/>
+    <player-stats/>
     <stats 
       :home_stats="home_stats" 
       :away_stats="away_stats" 
@@ -26,7 +26,6 @@
   </div>
 </template>
 <script>
-import newsSlider from "./slider/slider"
 import scoreboard from "./scoreboard/baseball/card"
 
 import stats from "./stats/baseball_stats"
@@ -35,14 +34,16 @@ import officals from "./misc/officals"
 
 import stadium from "./misc/stadium_info"
 
+import playerStats from "./slider/player_slider"
+
   export default {
     name: "baseball_template",
     components: {
-      newsSlider,
       scoreboard,
       stats,
       officals,
-      stadium
+      stadium,
+      playerStats
     },
     data: () => ({
     }),

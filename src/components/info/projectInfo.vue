@@ -7,7 +7,7 @@
   >
     <h1 class="title_card_name">About</h1>
       <v-card-text class="about_text">
-        This is an app that is developed using Vue and Vuetify.  The goal of this application is to complete the Barstool Sports Full Stack Developer Challenge.  The challenge requires to create an API that will gather data from a provided feed and store it in a database.  This app will then take that data and put it into a visual format.
+        This is an app that is developed using Vue and Vuetify.  This app requires the API that will gather data from a provided feed and store it in a database.  This app will then take that data and put it into a visual format.
       </v-card-text>
     <v-card-actions>
       <h3 class="mini_title">Resources</h3>
