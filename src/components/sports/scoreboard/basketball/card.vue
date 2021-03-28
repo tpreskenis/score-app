@@ -57,7 +57,7 @@
   import scoreboard from "./scoreboard"
 
   export default {
-    name:"scoreboard-basketball-card",
+    name:"basketball-card",
     props: {
       home_score: Array,
       away_score: Array,

@@ -25,7 +25,7 @@
 </template>
 <script>
   export default {
-    name: "basic_info"
+    name:"api-error",
   }
 </script>
 <style scoped lang="scss">

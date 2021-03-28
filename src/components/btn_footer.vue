@@ -15,7 +15,7 @@
 </template>
 <script>
   export default {
-    name: "btn-footer",
+    name:"btn-footer",
     data: () => ({ value: 0 }),
     computed: {
       sportIcon: function() {

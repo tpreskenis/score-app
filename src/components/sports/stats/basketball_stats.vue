@@ -73,7 +73,7 @@
 </template>
 <script>
   export default {
-    name:"stats",
+    name:"basketball-stats",
     props: {
       home_stats: Object,
       away_stats: Object,

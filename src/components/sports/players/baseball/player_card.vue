@@ -69,7 +69,7 @@
 </template>
 <script>
   export default {
-      name:"slider_card",
+      name:"baseball-card",
       props: {
         player_data: Object
       },

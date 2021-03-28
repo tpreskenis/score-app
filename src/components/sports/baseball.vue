@@ -34,10 +34,10 @@ import officals from "./misc/officals"
 
 import stadium from "./misc/stadium_info"
 
-import playerStats from "./slider/player_slider"
+import playerStats from "./players/baseball/player_slider"
 
   export default {
-    name: "baseball_template",
+    name:"baseball-template",
     components: {
       scoreboard,
       stats,

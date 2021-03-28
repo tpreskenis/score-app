@@ -6,17 +6,21 @@
     min-width="280"
     flat
   >
-<h1 class="batting_text">Batting</h1>
-  <batting-switch style="bottom: -15px;"/>
-  <p class="batter_info_warn">(Click Batter For Full Stats)</p>
-  <swiper class="swiper" :options="swiperOption" v-if="!this.$store.state.away_home_baseball">
-      <swiper-slide v-for="(item, i) in mlb_player_data_home" :key="i">
+<h1 class="batting_text">Player Stats</h1>
+  <batting-switch 
+    style="bottom: -15px;"       
+    :home_abr="home_team.abbreviation" 
+    :away_abr="away_team.abbreviation" 
+    />
+  <p class="batter_info_warn">(Click Player For Full Stats)</p>
+  <swiper class="swiper" :options="swiperOption" v-if="!this.$store.state.away_home_basketball">
+      <swiper-slide v-for="(item, i) in nba_player_data_home" :key="i">
         <slider-card :player_data="item"/>
       </swiper-slide>
      <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
-  <swiper class="swiper" :options="swiperOption" v-if="this.$store.state.away_home_baseball">
-      <swiper-slide v-for="(item, i) in mlb_player_data_away" :key="i">
+  <swiper class="swiper" :options="swiperOption" v-if="this.$store.state.away_home_basketball">
+      <swiper-slide v-for="(item, i) in nba_player_data_away" :key="i">
         <slider-card :player_data="item"/>
       </swiper-slide>
      <div class="swiper-pagination" slot="pagination"></div>
@@ -24,11 +28,11 @@
   </v-card>
 </template>
 <script>
-  import battingSwitch from "./batting-switch"
+  import battingSwitch from "./team_switch"
   import sliderCard from "./player_card"
 
 export default {
-    name: "player-slider",
+    name: "basketball-slider",
     components: {
         battingSwitch,
         sliderCard
@@ -44,12 +48,18 @@ export default {
       }
     },
     computed: {
-      mlb_player_data_away: function() {
-        return this.$store.state.mlb_game.away_batters
+      nba_player_data_away: function() {
+        return this.$store.state.nba_game.away_stats
       },
-      mlb_player_data_home: function() {
-        return this.$store.state.mlb_game.home_batters
-      }
+      nba_player_data_home: function() {
+        return this.$store.state.nba_game.home_stats
+      },
+      home_team: function() {
+        return this.$store.state.nba_game.home_team
+      },
+      away_team: function() {
+        return this.$store.state.nba_game.away_team
+      },
     }  
 }
 </script>

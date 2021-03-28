@@ -19,7 +19,7 @@ import baseball from './baseball';
 import basketball from './basketball';
 
 export default {
-  name: 'sports_layout',
+  name:"sports-template",
 
   components: {
     sportsSwitch,

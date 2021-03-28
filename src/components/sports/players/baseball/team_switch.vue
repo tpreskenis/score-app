@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-    name: "switch_slide",
+    name: "baseball-switch",
     data: function () {
         return {
         }

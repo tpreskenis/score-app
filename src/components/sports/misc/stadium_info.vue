@@ -59,7 +59,7 @@
 <script>
 const dateformat = require('dateformat');
   export default {
-      name:"stadium_card",
+      name:"stadium",
       data: () => ({
         show: false,
       }),

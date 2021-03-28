@@ -30,7 +30,7 @@
 </template>
 <script>
   export default {
-    name: "blank",
+    name: "officals",
     props: {
       officals: Array,
     },
