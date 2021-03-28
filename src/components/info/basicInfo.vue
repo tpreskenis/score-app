@@ -5,9 +5,6 @@
     max-width="344"
     flat
   >
-  <!--
-    <h1 class="title_card_name">Author</h1>
-    -->
     <v-list-item three-line>
 
       <v-list-item-avatar
@@ -28,7 +25,7 @@
           href="https://github.com/tpreskenis"
           target="_blank"
         >
-            GitLab
+            GitHub
         </v-btn>
       </v-list-item-content>
     </v-list-item>

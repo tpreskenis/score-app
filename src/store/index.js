@@ -9,6 +9,7 @@ export default new Vuex.Store({
     nba_game: {},
     sport_checkbox: false,
     away_home_baseball: false,
+    api_connection: false,
   },
   mutations: {
     updating_mlb (state, data) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     current_team_baseball (state, bool) {
       state.away_home_baseball = bool
+    },
+    api_connected (state, bool) {
+      state.api_connection = bool
     }
   },
   actions: {

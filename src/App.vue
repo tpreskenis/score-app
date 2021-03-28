@@ -119,7 +119,7 @@ export default {
     },
     mlbDataFetch() {
       fetch("http://localhost:3000/mlb_game", {
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        method: 'GET',
       })
         .then(async response => {
           const data = await response.json();
@@ -128,6 +128,7 @@ export default {
           // check for error response
           if (!response.ok) {
             // get error message from body or default to response statusText
+            this.$store.commit('api_connected',true)
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
           }
@@ -139,7 +140,7 @@ export default {
     },
     nbaDataFetch() {
       fetch("http://localhost:3000/nba_game", {
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        method: 'GET',
       })
         .then(async response => {
           const data = await response.json();
@@ -148,12 +149,14 @@ export default {
           // check for error response
           if (!response.ok) {
             // get error message from body or default to response statusText
+             this.$store.commit('api_connected',true)
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
           }
         })
         .catch(error => {
           this.errorMessage = error;
+          this.$store.commit('api_connected',false)
           console.error("There was an error!", error);
         });
     } 
