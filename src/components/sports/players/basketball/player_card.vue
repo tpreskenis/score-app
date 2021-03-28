@@ -19,7 +19,9 @@
       ></v-img>
     </v-list-item-avatar>
     <h2 class="name_text">{{player_data.display_name}} - {{player_data.position}}</h2>
-    <h4 class="job_text">{{player_data.batting_highlights}}</h4>
+    <h4 class="job_text">{{player_data.points}} PTS</h4>
+    <h4 class="starter_text" v-if="player_data.is_starter">Starter - ({{player_data.minutes}} Min)</h4>
+    <h4 class="bench_text" v-if="!player_data.is_starter">Bench - ({{player_data.minutes}} Min)</h4>
     </v-card>
     <div class="text-center">
       <v-dialog
@@ -83,36 +85,44 @@
         batting_stats: function() {
           return [ 
               {
-                name: 'Order',
-                number: this.player_data.bat_order,
+                name: 'Points',
+                number: this.player_data.points,
               },
               {
-                name: 'Batting',
-                number: this.player_data.batting_highlights,
+                name: 'FG',
+                number: this.player_data.field_goals_made + '/' + this.player_data.field_goals_attempted,
               },
               {
-                name: 'Walks',
-                number: this.player_data.walks,
+                name: 'FT',
+                number: this.player_data.free_throws_made + '/' + this.player_data.free_throws_attempted,
               },
               {
-                name: 'AVG.',
-                number: this.player_data.avg_string,
+                name: '3P',
+                number: this.player_data.three_point_field_goals_made + '/' + this.player_data.three_point_field_goals_attempted,
               },
               {
-                name: 'OBP.',
-                number: this.player_data.obp_string,
+                name: 'Assists',
+                number: this.player_data.assists,
               },
               {
-                name: 'OPS.',
-                number: this.player_data.ops_string,
+                name: 'Blocks',
+                number: this.player_data.blocks,
               },
               {
-                name: 'SLG.',
-                number: this.player_data.slg_string,
+                name: 'Defensive Rebounds',
+                number: this.player_data.defensive_rebounds,
               },
               {
-                name: 'Strike Out Rate',
-                number: this.player_data.strikeout_rate,
+                name: 'Offensive Rebounds',
+                number: this.player_data.offensive_rebounds,
+              },
+              {
+                name: 'Steals',
+                number: this.player_data.steals,
+              },
+              {
+                name: 'turnovers',
+                number: this.player_data.turnovers,
               },
           ]
         },
@@ -204,6 +214,16 @@
     font-family: 'Nunito', sans-serif;
     position: relative;
     color: #2185FF;
+}
+.starter_text {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    color: #168500;
+}
+.bench_text {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    color: #c53800;
 }
 .title_card_name {
     font-family: 'Nunito', sans-serif;

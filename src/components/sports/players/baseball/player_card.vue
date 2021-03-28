@@ -117,18 +117,18 @@
           ]
         },
         profile_pictures: function() {
-          // These images would most likly be stored on the backend, for now we will use the image location online
+          // These images would most likly be stored on the backend, for now we will use the image location from ESPN
           // Away Team 
           if (this.player_data.display_name == 'Dustin Ackley')
-            return 'https://s.yimg.com/it/api/res/1.2/X8B83AtHcA0afc_M.4nICg--~A/YXBwaWQ9eW5ld3M7dz0zMDA7aD0yMDA7cT0xMDA-/https://s.yimg.com/xe/i/us/sp/v/mlb_cutout/players_l/03222019/8648.1.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30372.png&w=350&h=254'
           if (this.player_data.display_name == 'Franklin Gutierrez')
-            return 'https://s.yimg.com/it/api/res/1.2/cT0pCDa2dODkObplIwzcqw--~A/YXBwaWQ9eW5ld3M7dz0zMDA7aD0yMDA7cT0xMDA-/https://s.yimg.com/xe/i/us/sp/v/mlb_cutout/players_l/10162017/7644.1.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6408.png&w=350&h=254'
           if (this.player_data.display_name == 'Kyle Seager')
-            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30819.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30819.png&w=350&h=254'
           if (this.player_data.display_name == 'Jesús Montero')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29448.png&w=350&h=254'
           if (this.player_data.display_name == 'Justin Smoak')
-            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30175.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30175.png&w=350&h=254'
           if (this.player_data.display_name == 'Miguel Olivo')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/5355.png&w=350&h=254'
           if (this.player_data.display_name == 'Casper Wells')
@@ -136,32 +136,32 @@
           if (this.player_data.display_name == 'Chone Figgins')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/5302.png&w=350&h=254'
           if (this.player_data.display_name == 'Brendan Ryan')
-            return 'https://s.yimg.com/it/api/res/1.2/H8rgUH4N1URKcf_3GFbE3A--~A/YXBwaWQ9eW5ld3M7dz0zMDA7aD0yMDA7cT0xMDA-/https://s.yimg.com/xe/i/us/sp/v/mlb_cutout/players_l/20170403/8042.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/28789.png&w=350&h=254'
           // Home Batters
           if (this.player_data.display_name == 'Mike Trout')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30836.png&w=350&h=254'
           if (this.player_data.display_name == 'Torii Hunter')
-            return 'https://s.yimg.com/it/api/res/1.2/V12llZoLhFFj_Hz6xsU6WA--~A/YXBwaWQ9eW5ld3M7dz0zMDA7aD0yMDA7cT0xMDA-/https://s.yimg.com/xe/i/us/sp/v/mlb_cutout/players_l/20150406/5884.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3723.png&w=350&h=254'
           if (this.player_data.display_name == 'Albert Pujols')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/4574.png&w=350&h=254'
           if (this.player_data.display_name == 'Kendrys Morales')
-            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6188.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6188.png&w=350&h=254'
           if (this.player_data.display_name == 'Alberto Callaspo')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/28541.png&w=350&h=254'
           if (this.player_data.display_name == 'Howie Kendrick')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6524.png&w=350&h=254'          
           if (this.player_data.display_name == 'Erick Aybar')
-            return 'https://a.espncdn.com/i/headshots/mlb/players/full/6522.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6522.png&w=350&h=254'
           if (this.player_data.display_name == 'Mark Trumbo')
-            return 'https://a.espncdn.com/i/headshots/mlb/players/full/29322.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29322.png&w=350&h=254'
           if (this.player_data.display_name == 'Bobby Wilson')
-            return 'https://a.espncdn.com/i/headshots/mlb/players/full/29115.png'
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29115.png&w=350&h=254'
           if (this.player_data.display_name == 'Maicer Izturis')
             return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6087.png&w=350&h=254'      
           if (this.player_data.display_name == 'Chris Iannetta')
-            return 'https://lh3.googleusercontent.com/proxy/cXo8BdhM_TmzWm5b3j7QfFE1EvOmnvQS3Ra1lEXFvkPWP_CB8vAUTRJ-XfqgyX_yDt70sCFHX5wk51-Oon1evDqLh9k7USrL7V1aex8FBivUeIwBTLQuRn8sX4dh9v0-dghYSplPsk0pDIx70ft6QmdZSun2LNMP'   
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/28561.png&w=350&h=254'   
           if (this.player_data.display_name == 'Peter Bourjos')
-            return 'https://s.yimg.com/it/api/res/1.2/vPS8KF1HVdRpYKrBS6n.bA--~A/YXBwaWQ9eW5ld3M7dz0zMDA7aD0yMDA7cT0xMDA-/https://s.yimg.com/xe/i/us/sp/v/mlb_cutout/players_l/04182019/8777.png'   
+            return 'https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29318.png&w=350&h=254'   
           else 
             return ''
         },
