@@ -10,11 +10,11 @@
   <v-card-text>
       <div class="container flex_logo">
         <div style="text-align: -webkit-center;">
-            <v-img src="https://1000logos.net/wp-content/uploads/2017/04/Miami-Heat-Logo.png" max-width="110px" style="left: 15px;"></v-img>
+            <v-img src="../../../../assets/team_logo/basketball/miami-heat-logo.png" max-width="110px" style="left: 15px;"></v-img>
         </div>
         <div style="padding: 35px;"/>
         <div style="text-align: -webkit-center;">
-            <v-img src="https://cdn.freebiesupply.com/images/large/2x/oklahoma-city-thunder-logo-transparent.png" max-width="80px" style="right: 25px;"></v-img>
+            <v-img src="../../../../assets/team_logo/basketball/oklahoma-city-thunder-logo.png" max-width="80px" style="right: 25px;"></v-img>
         </div>
       </div>
       <div class="container flex_stats">
@@ -57,7 +57,7 @@
   import scoreboard from "./scoreboard"
 
   export default {
-    name:"basketball-card",
+    name:"scoreboard-basketball-card",
     props: {
       home_score: Array,
       away_score: Array,

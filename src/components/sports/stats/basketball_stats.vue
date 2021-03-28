@@ -18,10 +18,10 @@
               
             </th>
             <th class="text-left">
-                <v-img src="https://1000logos.net/wp-content/uploads/2017/04/Miami-Heat-Logo.png" max-width="60px" style="right: 5px;"></v-img>
+                <v-img src="../../../assets/team_logo/basketball/miami-heat-logo.png" max-width="60px" style="right: 5px;"></v-img>
             </th>
             <th class="text-left">
-                <v-img src="https://cdn.freebiesupply.com/images/large/2x/oklahoma-city-thunder-logo-transparent.png" max-width="40px" style="right: 10px;"></v-img>
+                <v-img src="../../../assets/team_logo/basketball/oklahoma-city-thunder-logo.png" max-width="40px" style="right: 10px;"></v-img>
             </th>
           </tr>
         </thead>

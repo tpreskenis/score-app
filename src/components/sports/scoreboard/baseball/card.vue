@@ -10,11 +10,11 @@
   <v-card-text>
       <div class="container flex_logo">
         <div style="text-align: -webkit-center;">
-            <v-img src="https://i.pinimg.com/originals/01/5f/aa/015faa55b6c400afbef50fcd47fa8bc1.png" max-width="80px" style="left: 38px;"></v-img>
+            <v-img src="../../../../assets/team_logo/baseball/angles_logo.png" max-width="80px" style="left: 38px;"></v-img>
         </div>
         <div style="padding: 35px;"/>
         <div style="text-align: -webkit-center;">
-            <v-img src="https://logos-world.net/wp-content/uploads/2020/05/Seattle-Mariners-Logo.png" max-width="145px" style="right: 3px;"></v-img>
+            <v-img src="../../../../assets/team_logo/baseball/mariners-logo.png" max-width="145px" style="right: 3px;"></v-img>
         </div>
       </div>
       <div class="container flex_stats">

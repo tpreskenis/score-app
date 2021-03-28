@@ -1,9 +1,9 @@
 <template>
       <div class="switch-wrapper-small">
         <div class="option_one" v-on:click="switch_('Home')"/>
-            <p :class="text_class_one">LAA<p/>
+            <p :class="text_class_one">{{home_abr}}<p/>
         <div class="option_two" v-on:click="switch_('Away')"/>
-            <div :class="text_class_two">SEA</div>
+            <div :class="text_class_two">{{away_abr}}</div>
         <input v-model="checkbox" type="checkbox" class="checkbox" id="checkbox"/>
         <label for="checkbox" class="switch"></label>
     </div>
@@ -14,6 +14,10 @@ export default {
     data: function () {
         return {
         }
+    },
+    props: {
+      home_abr: String,
+      away_abr: String,
     },
   // define methods under the `methods` object
   methods: {

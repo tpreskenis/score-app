@@ -128,7 +128,7 @@
                 number: this.player_data.steals,
               },
               {
-                name: 'turnovers',
+                name: 'Turnovers',
                 number: this.player_data.turnovers,
               },
           ]

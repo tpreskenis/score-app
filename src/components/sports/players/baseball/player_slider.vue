@@ -7,7 +7,11 @@
     flat
   >
 <h1 class="batting_text">Batting</h1>
-  <batting-switch style="bottom: -15px;"/>
+  <batting-switch style="bottom: -15px;"
+    :home_abr="home_team.abbreviation" 
+    :away_abr="away_team.abbreviation" 
+    v-if="away_team && home_team"
+    />
   <p class="batter_info_warn">(Click Batter For Full Stats)</p>
   <swiper class="swiper" :options="swiperOption" v-if="!this.$store.state.away_home_baseball">
       <swiper-slide v-for="(item, i) in mlb_player_data_home" :key="i">
@@ -49,7 +53,13 @@ export default {
       },
       mlb_player_data_home: function() {
         return this.$store.state.mlb_game.home_batters
-      }
+      },
+      home_team: function() {
+        return this.$store.state.mlb_game.home_team
+      },
+      away_team: function() {
+        return this.$store.state.mlb_game.away_team
+      },
     }  
 }
 </script>

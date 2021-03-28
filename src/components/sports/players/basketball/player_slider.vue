@@ -6,13 +6,14 @@
     min-width="280"
     flat
   >
-<h1 class="batting_text">Player Stats</h1>
-  <batting-switch 
+<h1 class="player_text">Player Stats</h1>
+  <player-switch 
     style="bottom: -15px;"       
     :home_abr="home_team.abbreviation" 
     :away_abr="away_team.abbreviation" 
+    v-if="away_team && home_team"
     />
-  <p class="batter_info_warn">(Click Player For Full Stats)</p>
+  <p class="player_info_warn">(Click Player For Full Stats)</p>
   <swiper class="swiper" :options="swiperOption" v-if="!this.$store.state.away_home_basketball">
       <swiper-slide v-for="(item, i) in nba_player_data_home" :key="i">
         <slider-card :player_data="item"/>
@@ -28,13 +29,13 @@
   </v-card>
 </template>
 <script>
-  import battingSwitch from "./team_switch"
+  import playerSwitch from "./team_switch"
   import sliderCard from "./player_card"
 
 export default {
     name: "basketball-slider",
     components: {
-        battingSwitch,
+        playerSwitch,
         sliderCard
     },
     data() {
@@ -64,13 +65,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.batting_text {
+.player_text {
     font-family: 'Nunito', sans-serif;
     text-align-last: center;
     position: relative;
     bottom: -10px;
 }
-.batter_info_warn {
+.player_info_warn {
     position: relative;
     bottom: -25px;
     margin-bottom: 0px;
