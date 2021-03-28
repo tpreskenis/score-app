@@ -79,8 +79,15 @@
       return {
         dialog: false,
         dialog_batter_image: null,
+        swiperOption: {
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        },
       }
     },
+
       computed: {
         batting_stats: function() {
           return [ 
