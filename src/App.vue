@@ -125,10 +125,10 @@ export default {
           const data = await response.json();
           this.$store.commit('updating_mlb',data[0])
           console.log(this.$store.state.mlb_game)
+          this.$store.commit('api_connected',true)
           // check for error response
           if (!response.ok) {
             // get error message from body or default to response statusText
-            this.$store.commit('api_connected',true)
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
           }
@@ -146,10 +146,10 @@ export default {
           const data = await response.json();
           this.$store.commit('updating_nba',data[0])
           console.log(this.$store.state.nba_game)
+          this.$store.commit('api_connected',true)
           // check for error response
           if (!response.ok) {
             // get error message from body or default to response statusText
-             this.$store.commit('api_connected',true)
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
           }

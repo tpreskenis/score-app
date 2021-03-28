@@ -1,13 +1,19 @@
 <template>
   <div>
-    <scoreboard/>
+    <scoreboard
+      :away_score="away_score" 
+      :home_score="home_score" 
+      :home_abr="home_team.abbreviation" 
+      :away_abr="away_team.abbreviation" 
+      />
     <stats :home_stats="home_stats" :away_stats="away_stats" v-if="home_stats && away_stats"/>
     <stadium :site="site" v-if="site"/>
     <officals :officals="officals" v-if="officals"/>
   </div>
 </template>
 <script>
-import scoreboard from "./scoreboard/basketball_score"
+import scoreboard from "./scoreboard/basketball/card"
+
 import stats from "./stats/basketball_stats"
 import stadium from "./misc/stadium_info"
 import officals from "./misc/officals"
@@ -34,7 +40,20 @@ import officals from "./misc/officals"
       },
       away_stats: function() {
         return this.$store.state.nba_game.away_totals
-      }
+      },
+      // Scoreboard
+      home_score: function() {
+        return this.$store.state.nba_game.home_period_scores
+      },
+      away_score: function() {
+        return this.$store.state.nba_game.away_period_scores
+      },
+      home_team: function() {
+        return this.$store.state.nba_game.home_team
+      },
+      away_team: function() {
+        return this.$store.state.nba_game.away_team
+      },
     }
   }
 </script>
