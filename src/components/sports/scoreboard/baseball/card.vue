@@ -10,7 +10,7 @@
   <v-card-text>
       <div class="container flex_logo">
         <div style="text-align: -webkit-center;">
-            <v-img src="../../../../assets/team_logo/baseball/angles_logo.png" max-width="80px" style="left: 38px;"></v-img>
+            <v-img src="../../../../assets/team_logo/baseball/angles-logo.png" max-width="80px" style="left: 38px;"></v-img>
         </div>
         <div style="padding: 35px;"/>
         <div style="text-align: -webkit-center;">

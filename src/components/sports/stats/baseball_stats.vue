@@ -18,7 +18,7 @@
               
             </th>
             <th class="text-left">
-              <v-img src="../../../assets/team_logo/baseball/angles_logo.png" max-width="32px" style="right: 5px;"></v-img>
+              <v-img src="../../../assets/team_logo/baseball/angles-logo.png" max-width="32px" style="right: 5px;"></v-img>
             </th>
             <th class="text-left">
               <v-img src="../../../assets/team_logo/baseball/mariners-logo.png" max-width="60px" style="right: 18px;"></v-img>
