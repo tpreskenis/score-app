@@ -11,6 +11,7 @@ export default new Vuex.Store({
     away_home_baseball: false,
     away_home_basketball: false,
     api_connection: false,
+    local: false
   },
   mutations: {
     updating_mlb (state, data) {
@@ -30,6 +31,9 @@ export default new Vuex.Store({
     },
     api_connected (state, bool) {
       state.api_connection = bool
+    },
+    local_instead (state, bool) {
+      state.local = bool
     }
   },
   actions: {

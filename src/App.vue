@@ -118,6 +118,12 @@ export default {
         this.page_title = "Information"
     },
     mlbDataFetch() {
+      if (this.$store.state.local) {
+        var json = require('../src/assets/json_information/mlb.json'); //(with path)
+        this.$store.commit('updating_mlb',json)
+        this.$store.commit('api_connected',true)
+      }
+      else {
       fetch("http://localhost:3000/mlb_game", {
         method: 'GET',
       })
@@ -134,11 +140,17 @@ export default {
           }
         })
         .catch(error => {
-          this.errorMessage = error;
-          console.error("There was an error!", error);
+          this.$store.commit('api_connected',false)
+          console.error("There was an error, auto connection failed!", error);
         });
+      }
     },
     nbaDataFetch() {
+      if (this.$store.state.local) {
+        var json = require('../src/assets/json_information/nba.json'); //(with path)
+        this.$store.commit('updating_nba',json)
+      }
+      else {
       fetch("http://localhost:3000/nba_game", {
         method: 'GET',
       })
@@ -155,10 +167,10 @@ export default {
           }
         })
         .catch(error => {
-          this.errorMessage = error;
           this.$store.commit('api_connected',false)
-          console.error("There was an error!", error);
+          console.error("There was an error, auto connection failed!", error);
         });
+    }
     } 
   },
   created() {
