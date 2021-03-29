@@ -21,7 +21,7 @@ npm run serve
 
 ## API or Local
 <div align="center">
-    <img src="src\assets\examples/local_or_api.png" width="250">
+    <img src="src\assets\example.png" width="250">
 </div>
 <div align="center">
 If the API is not running, the application will ask you to either read from local files or download and run the API.
