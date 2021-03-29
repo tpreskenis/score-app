@@ -6,6 +6,7 @@
 The follwing is a front end application built off of vue.  It uses a score api to get data from two games and then transform that into an easily accessable application.  The application is also built around using an iPhone X with touch screen, but also works on desktop. 
 </div>
 
+
 ---
 
 ## Project setup
@@ -19,6 +20,11 @@ Once that is running then compile the application.
 npm run serve
 ```
 
+This repo is currently live at:
+https://gentle-sea-03c17830f.azurestaticapps.net
+
+Of course this website will only let you run with the Local option selected!
+
 ## API or Local
 <div align="center">
     <img src="src\assets\example.png" width="250">
@@ -30,7 +36,8 @@ If the API is not running, the application will ask you to either read from loca
 ### If You Run Local
     1. Press the code icon.
     2. Press the refresh button on the top bar. 
-    (Make sure to wait a quick second before you press the refresh button)
+    3. Make sure to wait a 10 seconds before you press the refresh button.
+    
 
 ### If You Run With API
     1. Press the API icon.
