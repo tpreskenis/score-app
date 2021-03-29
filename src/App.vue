@@ -128,6 +128,7 @@ export default {
         method: 'GET',
       })
         .then(async response => {
+          if(!this.$store.state.local) {
           const data = await response.json();
           this.$store.commit('updating_mlb',data[0])
           console.log(this.$store.state.mlb_game)
@@ -138,10 +139,13 @@ export default {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
           }
+          }
         })
         .catch(error => {
+          if(!this.$store.state.local) {
           this.$store.commit('api_connected',false)
           console.error("There was an error, auto connection failed!", error);
+          }
         });
       }
     },
@@ -155,6 +159,7 @@ export default {
         method: 'GET',
       })
         .then(async response => {
+          if(!this.$store.state.local) {
           const data = await response.json();
           this.$store.commit('updating_nba',data[0])
           console.log(this.$store.state.nba_game)
@@ -165,10 +170,13 @@ export default {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
           }
+          }
         })
         .catch(error => {
+          if(!this.$store.state.local) {
           this.$store.commit('api_connected',false)
           console.error("There was an error, auto connection failed!", error);
+          }
         });
     }
     } 
