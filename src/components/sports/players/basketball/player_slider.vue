@@ -67,7 +67,7 @@ export default {
 <style lang="scss" scoped>
 .player_text {
     font-family: 'Nunito', sans-serif;
-    text-align-last: center;
+    margin-left: 5%;
     position: relative;
     bottom: -10px;
 }
