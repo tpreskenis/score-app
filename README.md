@@ -8,7 +8,9 @@ The follwing is a front end application built off of vue.  It uses a score api t
 
 <p></p>
 <div align="center">
-Live at: https://gentle-sea-03c17830f.azurestaticapps.net (Local Only)
+
+Live at: [Here](https://gentle-sea-03c17830f.azurestaticapps.net) (Local Only)
+
 </div>
 
 
